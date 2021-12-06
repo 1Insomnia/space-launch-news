@@ -1,9 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { NextRouter } from 'next/router'
 import { FiMenu, FiX } from 'react-icons/fi'
 
-import { useForceMenuClose } from '../../hooks/useForceMenuClose'
-// Components
 import Logo from './Logo'
 import ThemeToggle from './ThemeToggle'
 import NavListMobile from './NavListMobile'
@@ -17,7 +15,7 @@ const Header = ({ router }: IProps) => {
 
   return (
     <header
-      className="bg-light-transparent text-dark dark:bg-dark-transparent dark:text-light absolute top-0 left-0 w-full z-1000 shadow-lg"
+      className="bg-light-transparent text-dark dark:bg-dark-transparent dark:text-light fixed top-0 left-0 w-full z-1000 shadow-lg"
       style={{
         backdropFilter: 'blur(10px)'
       }}
