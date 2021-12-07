@@ -11,3 +11,31 @@
     @apply outline-none;
   }
 }
+
+@layer components {
+  .nav-link {
+    @apply capitalize h-16 flex items-center justify-center;
+    transition: all 100ms 0ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-link-desktop {
+    @apply hover:text-teal relative;
+  }
+
+  .nav-link-desktop::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: inline-block;
+    height: 5px;
+    background-color: #4fd1c5;
+    transform: scale(0);
+    transition: transform 235ms 0ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-link-desktop:hover::after {
+    transform: scale(1);
+  }
+}

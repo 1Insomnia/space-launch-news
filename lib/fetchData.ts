@@ -1,22 +1,35 @@
 import axios from 'axios'
 
 const fetchData = async (endpoint = '/') => {
-  const instance = axios.create({
-    baseURL: 'https://api.spaceflightnewsapi.net/v3'
-  })
+  const baseURL = 'https://api.spaceflightnewsapi.net/v3'
 
-  try {
-    const response = await instance.get(endpoint)
+  https: try {
+    const response = await axios.get(baseURL + endpoint)
     return {
       data: response.data,
       error: null
     }
-  } catch (error) {
+  } catch (error: any) {
     return {
       data: null,
-      error: error
+      error: error.message
     }
   }
 }
 
-export default fetchData
+export const fetchAllArticles = async (q = '') => {
+  const { data, error } = await fetchData(`/articles${q}`)
+  console.log(data)
+  return {
+    articles: data,
+    error: error
+  }
+}
+
+export const fetchAllBlogs = async (q = '') => {
+  const { data, error } = await fetchData(`/blogs${q}`)
+  return {
+    blogs: data,
+    error: error
+  }
+}

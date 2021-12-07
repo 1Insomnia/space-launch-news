@@ -1,5 +1,4 @@
 import NextLink from 'next/link'
-import { NextRouter } from 'next/router'
 import cn from 'classnames'
 
 interface IProps {
@@ -14,13 +13,7 @@ const NavLink = ({ text, href, path, className }: IProps) => {
 
   return (
     <NextLink href={href}>
-      <a
-        className={cn(
-          active ? 'text-teal font-semibold' : 'text-dark dark:text-light',
-          'capitalize font-base',
-          className
-        )}
-      >
+      <a className={cn(active ? 'font-bold' : '', 'nav-link', className)}>
         {text}
       </a>
     </NextLink>

@@ -1,5 +1,4 @@
 import formatDate from '../../lib/formatDate'
-import NextImage from 'next/image'
 
 interface IProps {
   events: []
@@ -37,8 +36,17 @@ const Article = ({
       <div className="p-4">
         <h4 className="font-semibold mb-4 text-lg">{title}</h4>
         <p className="leading-relaxed text-sm py-4">{summary}</p>
-        <p className="text-sm">{formatDate(publishedAt)}</p>
-        <div>{url}</div>
+        <div className="flex items-center justify-between">
+          <p className="text-sm">{formatDate(publishedAt)}</p>
+          <a
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            className="text-teal underline"
+          >
+            source
+          </a>
+        </div>
       </div>
     </div>
   )

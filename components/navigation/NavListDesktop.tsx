@@ -2,33 +2,32 @@ import { NextRouter } from 'next/router'
 import NavLink from './NavLink'
 
 interface IProps {
-  isMenuOpen: boolean
   router: NextRouter
 }
 
-const NavListMobile = ({ isMenuOpen, router }: IProps) => {
-  return isMenuOpen ? (
-    <nav className="flex flex-col pt-10 text-xl gap-4 pb-4 h-screen-offset bg-teal sm:hidden">
+const NavListDesktop = ({ router }: IProps) => {
+  return (
+    <nav className="hidden sm:flex sm:items-center space-x-4">
       <NavLink
         text="home"
         href="/"
         path={router.asPath}
-        className="text-light"
+        className="nav-link-desktop"
       />
       <NavLink
         text="articles"
         href="/articles"
         path={router.asPath}
-        className="text-light"
+        className="nav-link-desktop"
       />
       <NavLink
         text="blogs"
         href="/blogs"
         path={router.asPath}
-        className="text-light"
+        className="nav-link-desktop"
       />
     </nav>
-  ) : null
+  )
 }
 
-export default NavListMobile
+export default NavListDesktop
