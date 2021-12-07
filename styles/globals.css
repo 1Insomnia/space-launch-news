@@ -38,4 +38,41 @@
   .nav-link-desktop:hover::after {
     transform: scale(1);
   }
+
+  .display-1 {
+    font-size: 3rem;
+    letter-spacing: -0.066875rem;
+    line-height: 1.5;
+    font-weight: 700;
+  }
+
+  .display-2 {
+    font-weight: 600;
+    font-size: 2.25rem;
+    letter-spacing: -0.020625rem;
+  }
+
+  .display-3 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: -0.029375rem;
+  }
+
+  .display-4 {
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: -0.020625rem;
+  }
+
+  .display-5 {
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: -0.01125rem;
+  }
+
+  .display-6 {
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: -0.005625rem;
+  }
 }

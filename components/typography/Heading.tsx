@@ -11,19 +11,27 @@ const Heading = ({ as, text, className }: IProps) => {
   const headings = [
     {
       level: 'h1',
-      class: 'text-5xl tracking-tighter font-bold leading-normal'
+      class: 'display-1'
     },
     {
       level: 'h2',
-      class: 'text-4xl tracking-tighter font-bold leading-normal'
+      class: 'display-2'
     },
     {
       level: 'h3',
-      class: 'text-3xl tracking-tighter font-bold leading-normal'
+      class: 'display-3'
     },
     {
       level: 'h4',
-      class: 'text-2xl tracking-tighter font-bold leading-normal'
+      class: 'display-4'
+    },
+    {
+      level: 'h5',
+      class: 'display-5'
+    },
+    {
+      level: 'h6',
+      class: 'display-6'
     }
   ]
 
