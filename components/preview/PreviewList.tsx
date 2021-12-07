@@ -1,9 +1,8 @@
-import Article from './Article'
+import Preview from './Preview'
 
 interface IProps {
-  articles: {
+  previews: {
     events: []
-    featured: boolean
     id: number
     imageUrl: string
     launches: []
@@ -13,17 +12,18 @@ interface IProps {
     title: string
     updatedAt: string
     url: string
+    featured?: boolean
   }[]
 }
 
-const ArticleList = ({ articles }: IProps) => {
+const PreviewList = ({ previews }: IProps) => {
   return (
     <div className="space-y-8">
-      {articles.map(article => (
-        <Article {...article} key={article.id} />
+      {previews.map(preview => (
+        <Preview {...preview} key={preview.id} />
       ))}
     </div>
   )
 }
 
-export default ArticleList
+export default PreviewList

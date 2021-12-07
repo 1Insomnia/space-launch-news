@@ -1,15 +1,15 @@
-import { NextPageContext } from 'next'
+import { NextPage, NextPageContext } from 'next'
 import { fetchAllArticles } from '../lib/fetchData'
 import NextLink from 'next/link'
 
 // Components
 import Heading from '../components/typography/Heading'
-import ArticleList from '../components/article/ArticleList'
+import PreviewList from '../components/preview/PreviewList'
 
 interface IPage {
   articles: {
-    events: []
     featured: boolean
+    events: []
     id: number
     imageUrl: string
     launches: []
@@ -23,12 +23,12 @@ interface IPage {
   error: string
 }
 
-const Articles = ({ articles, error }: IPage) => {
+const Articles: NextPage<IPage> = ({ articles, error }: IPage) => {
   return (
     <section id="articles" className="py-10">
       <div className="container">
         <Heading as="h1" text="Latest Articles" className="text-center mb-10" />
-        <ArticleList articles={articles} />
+        {!error && <PreviewList previews={articles} />}
       </div>
       <div className="text-center pt-10">
         <NextLink href="#">
@@ -42,7 +42,7 @@ const Articles = ({ articles, error }: IPage) => {
 }
 
 export const getServerSideProps = async (context: NextPageContext) => {
-  const { articles, error } = await fetchAllArticles()
+  const { articles, error } = await fetchAllArticles('?_limit=3')
   return {
     props: {
       articles: articles,

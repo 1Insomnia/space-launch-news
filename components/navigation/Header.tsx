@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import { NextRouter } from 'next/router'
-import cn from 'classnames'
-import { FiMenu, FiX } from 'react-icons/fi'
 
 // Components
 import Logo from './Logo'
@@ -24,7 +22,7 @@ const Header = ({ router }: IProps) => {
         backdropFilter: 'blur(10px)'
       }}
     >
-      <div className="pl-8 sm:container sm:pl-0">
+      <div className="pl-8 sm:max-w-4xl mx-auto sm:pl-0">
         <div className="h-16 flex items-center justify-between">
           <Logo />
           <NavListDesktop router={router} />

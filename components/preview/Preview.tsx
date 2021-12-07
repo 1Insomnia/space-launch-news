@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 interface IProps {
   events: []
-  featured: boolean
+  featured?: boolean
   id: number
   imageUrl: string
   launches: []
@@ -15,7 +15,7 @@ interface IProps {
   url: string
 }
 
-const Article = ({
+const Preview = ({
   events,
   featured,
   id,
@@ -60,4 +60,4 @@ const Article = ({
   )
 }
 
-export default Article
+export default Preview
