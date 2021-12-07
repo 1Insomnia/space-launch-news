@@ -1,10 +1,14 @@
+import Heading from './typography/Heading'
+
 const Hero = () => {
   return (
     <section className="py-10">
       <div className="container">
-        <h1 className="text-5xl tracking-tighter font-bold leading-normal text-center mb-10">
-          Space Flight Portal
-        </h1>
+        <Heading
+          as="h1"
+          text="Space Flight Portal"
+          className="text-center mb-10"
+        />
         <div className="space-y-8">
           <div>
             <h2 className="text-4xl font-semibold tracking-tight mb-2">

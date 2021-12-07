@@ -1,4 +1,5 @@
 import formatDate from '../../lib/formatDate'
+import { motion } from 'framer-motion'
 
 interface IProps {
   events: []
@@ -28,14 +29,17 @@ const Article = ({
   url
 }: IProps) => {
   return (
-    <div className="shadow-md rounded-lg overflow-hidden">
-      <div
-        className="h-64 bg-cover bg-center bg-no-repeat w-full"
-        style={{ background: `url(${imageUrl})` }}
-      ></div>
-      <div className="p-4">
-        <h4 className="font-semibold mb-4 text-lg">{title}</h4>
-        <p className="leading-relaxed text-sm py-4">{summary}</p>
+    <motion.div
+      className="shadow-md rounded-lg overflow-hidden sm:flex"
+      whileHover={{ y: 10 }}
+    >
+      <div className="p-4 flex flex-col justify-between w-full sm:w-2/3">
+        <div>
+          <h3 className="font-semibold text-2xl tracking-tight mb-4">
+            {title}
+          </h3>
+          <p className="leading-relaxed text-sm py-2">{summary}</p>
+        </div>
         <div className="flex items-center justify-between">
           <p className="text-sm">{formatDate(publishedAt)}</p>
           <a
@@ -48,7 +52,11 @@ const Article = ({
           </a>
         </div>
       </div>
-    </div>
+      <div
+        className="h-64 w-1/3 hidden sm:block"
+        style={{ background: `url(${imageUrl}) center center/cover no-repeat` }}
+      ></div>
+    </motion.div>
   )
 }
 

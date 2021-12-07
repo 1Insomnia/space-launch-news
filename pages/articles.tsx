@@ -1,7 +1,9 @@
 import { NextPageContext } from 'next'
 import { fetchAllArticles } from '../lib/fetchData'
+import NextLink from 'next/link'
 
 // Components
+import Heading from '../components/typography/Heading'
 import ArticleList from '../components/article/ArticleList'
 
 interface IPage {
@@ -22,15 +24,18 @@ interface IPage {
 }
 
 const Articles = ({ articles, error }: IPage) => {
-  console.log([articles, error])
-
   return (
     <section id="articles" className="py-10">
       <div className="container">
-        <h1 className="text-5xl tracking-tighter font-bold leading-normal text-center mb-10">
-          Latest Articles
-        </h1>
+        <Heading as="h1" text="Latest Articles" className="text-center mb-10" />
         <ArticleList articles={articles} />
+      </div>
+      <div className="text-center pt-10">
+        <NextLink href="#">
+          <a className="inline-block px-4 py-2 border border-accents-9 rounded">
+            Read More
+          </a>
+        </NextLink>
       </div>
     </section>
   )

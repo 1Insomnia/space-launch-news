@@ -1,4 +1,4 @@
-import type { NextPage, NextPageContext } from 'next'
+import type { NextPage } from 'next'
 
 // components
 import Hero from '../components/Hero'

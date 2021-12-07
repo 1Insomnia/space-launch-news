@@ -8,6 +8,7 @@ import Logo from './Logo'
 import ThemeToggle from './ThemeToggle'
 import NavListMobile from './NavListMobile'
 import NavListDesktop from './NavListDesktop'
+import NavToggle from './NavToggle'
 
 interface IProps {
   router: NextRouter
@@ -29,19 +30,7 @@ const Header = ({ router }: IProps) => {
           <NavListDesktop router={router} />
           <div className="flex items-center space-x-4">
             <ThemeToggle />
-            <button
-              onClick={() => setIsMenuOpen(prev => !prev)}
-              className={cn(
-                isMenuOpen ? 'bg-teal' : 'bg-light-transparent',
-                'sm:hidden h-16 w-16 flex items-center justify-center'
-              )}
-            >
-              {isMenuOpen ? (
-                <FiX className="w-6 h-6 text-dark dark:text-light" />
-              ) : (
-                <FiMenu className="w-6 h-6 text-dark dark:text-light" />
-              )}
-            </button>
+            <NavToggle isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
           </div>
         </div>
       </div>
