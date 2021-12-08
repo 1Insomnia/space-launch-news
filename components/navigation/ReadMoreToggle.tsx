@@ -1,4 +1,8 @@
-const ReadMoreToggle = ({ handleClick }) => {
+interface IProps {
+  handleClick: (event: React.MouseEvent<HTMLElement>) => void
+}
+
+const ReadMoreToggle = ({ handleClick }: IProps) => {
   return (
     <button
       onClick={handleClick}

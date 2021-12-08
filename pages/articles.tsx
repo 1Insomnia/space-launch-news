@@ -4,7 +4,6 @@ import { fetchAllArticles } from '../lib/fetchData'
 // Components
 import Heading from '../components/typography/Heading'
 import PreviewList from '../components/preview/PreviewList'
-import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import ReadMoreToggle from '../components/navigation/ReadMoreToggle'
 
