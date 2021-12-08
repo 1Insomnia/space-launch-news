@@ -40,7 +40,7 @@ module.exports = {
       },
       backgroundImage: {
         'hero-pattern':
-          "linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)), url('/hero-2.jpg')"
+          "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.65)), url('/hero.jpg')"
       },
       height: {
         'screen-offset': 'calc(100vh - 64px)'

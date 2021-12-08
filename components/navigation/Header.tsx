@@ -25,8 +25,8 @@ const Header = ({ router }: IProps) => {
       <div className="pl-8 sm:max-w-4xl mx-auto sm:pl-0">
         <div className="h-16 flex items-center justify-between">
           <Logo />
-          <NavListDesktop router={router} />
           <div className="flex items-center space-x-4">
+            <NavListDesktop router={router} />
             <ThemeToggle />
             <NavToggle isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
           </div>
