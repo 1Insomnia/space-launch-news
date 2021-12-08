@@ -3,7 +3,7 @@ import axios from 'axios'
 const fetchData = async (endpoint = '/') => {
   const baseURL = 'https://api.spaceflightnewsapi.net/v3'
 
-  https: try {
+  try {
     const response = await axios.get(baseURL + endpoint)
     return {
       data: response.data,
@@ -19,7 +19,7 @@ const fetchData = async (endpoint = '/') => {
 
 export const fetchAllArticles = async (q = '') => {
   const { data, error } = await fetchData(`/articles${q}`)
-  console.log(data)
+
   return {
     articles: data,
     error: error

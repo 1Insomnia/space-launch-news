@@ -7,7 +7,7 @@ const Logo = () => {
         <BiRocket className="w-6 h-6 text-teal" />
       </span>
       <span className="block capitalize text-lg font-bold tracking-tight text-dark dark:text-light">
-        Space Launch News
+        Space Launch Portal
       </span>
     </div>
   )
