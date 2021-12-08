@@ -13,7 +13,7 @@ interface IProps {
 }
 
 const Header = ({ router }: IProps) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
 
   return (
     <header

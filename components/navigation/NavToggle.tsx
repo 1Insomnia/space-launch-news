@@ -1,10 +1,16 @@
 import cn from 'classnames'
+import { Dispatch, SetStateAction } from 'react'
 import { FiX, FiMenu } from 'react-icons/fi'
 
-const NavToggle = ({ isMenuOpen, setIsMenuOpen }) => {
+interface IProps {
+  isMenuOpen: boolean
+  setIsMenuOpen: Dispatch<SetStateAction<boolean>>
+}
+
+const NavToggle = ({ isMenuOpen, setIsMenuOpen }: IProps) => {
   return (
     <button
-      onClick={() => setIsMenuOpen(prev => !prev)}
+      onClick={() => setIsMenuOpen(!isMenuOpen)}
       className={cn(
         isMenuOpen ? 'bg-teal' : '',
         'sm:hidden h-16 w-16 flex items-center justify-center'
